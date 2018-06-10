@@ -1,0 +1,25 @@
+.loginContents {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+input {
+    padding: 2px;
+    margin: 2px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: brandon-grotesque;
+    height: 30px;
+    font-size: 18px;
+}
+.doPostButton {
+    width: 100%;
+    padding: 2px;
+    margin: 2px;
+    box-sizing: border-box;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}

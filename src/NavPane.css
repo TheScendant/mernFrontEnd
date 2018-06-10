@@ -1,0 +1,42 @@
+#navBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(84, 84, 84);
+    height: 50px;
+}
+.navTab {
+    height: 100%;
+    width: 15%;
+    padding: 2px;
+    margin: 2px;
+    cursor: pointer;
+    background-color: lightseagreen;
+    box-sizing: border-box;
+    text-align: center;
+}
+.navTab:hover {
+    background-color: #177E89;
+}
+.navTabSizing {
+    height: 50px;
+}
+
+#AlchemyLogo {
+    background-color:  white;
+    display:  flex;
+    flex-direction:  row;
+    align-items:  center;
+    justify-content:  center;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 50px;
+    width: 80px;
+}
+.logo {
+    height:35px;
+    cursor: pointer;
+}

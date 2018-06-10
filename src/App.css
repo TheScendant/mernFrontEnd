@@ -1,0 +1,55 @@
+/*
+metalic seaweed 177E89
+midnight green 084C61
+urobilin DBBE27
+davys grey 545454
+light sea green 20B2AA
+*/
+
+.doPostButton{
+    height: 100px;
+    width: 100px;
+}
+
+.banner {
+    left: 0%;
+    top: -51.81%;
+    width: 100%;
+    height: 203.62%;
+    position: absolute;
+}
+
+.twist {
+    animation: twist 1s infinite;
+}
+
+@keyframes twist {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.page {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: brandon-grotesque;
+}
+
+#root {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.headerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
