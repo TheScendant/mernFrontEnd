@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
+import AlchemyLogo from './media/AlchemyLogo.png';
 class Login extends Component {
     constructor(props) {
       super(props);
@@ -31,6 +32,7 @@ class Login extends Component {
     render() {
         return (
           <div className="loginContents">
+          <img src={AlchemyLogo} alt="AlchemyEvents"/>
           <form onSubmit={this.handleSubmit.bind(this)}>
             <input id="username" type="text" onChange={this.handleChange}/>
             <input id="password" type="password" onChange={this.handleChange}/>

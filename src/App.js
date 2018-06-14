@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import NavPane from './NavPane';
 import Login from './Login';
-import AlchemyLogo from './media/AlchemyLogo.png';
+import EventPage from './EventPage';
 
 class App extends Component {
 
@@ -24,26 +24,20 @@ class App extends Component {
     return fetch("/api/hayden", postReq).then((response) => {
       return response.json();
     }).then((jsonData) => {
-      console.warn(jsonData);
+      const responseObject = JSON.parse(jsonData);
       this.setState({
         loading: this.state.loading,
-        loggedIn: true
-      })
+        loggedIn: responseObject.loggedIn
+      });
     });
   }
-  
+
   render() {
-    let header;
-    //if (this.state.loggedIn) {
-      header = (
-          <NavPane/>
-      );
-    //}
+    let mainElement = this.state.loggedIn ? <Login doPost={this.doPost.bind(this)}/> : <EventPage/>;
     return (
       <div className="page">
-          {header}
-          <img src={AlchemyLogo} alt="AlchemyEvents"/>
-          <Login doPost={this.doPost.bind(this)}/>
+          <NavPane/>
+          {mainElement}
       </div>
     );
   }
