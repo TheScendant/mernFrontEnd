@@ -11,8 +11,17 @@ class App extends Component {
     this.state = {loading: false, loggedIn: false}
   }
 
-  doPost(){
-    return fetch("/api/hayden").then((response) => {
+  doPost(username, password){
+    const creds = {username: username, password: password};
+    const postReq = {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(creds),
+
+    }
+    return fetch("/api/hayden", postReq).then((response) => {
       return response.json();
     }).then((jsonData) => {
       console.warn(jsonData);
