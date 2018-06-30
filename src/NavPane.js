@@ -3,6 +3,13 @@ import AlchemyLogo from './media/AlchemyLogo.png';
 import './NavPane.css'
 class NavPane extends Component {
     render() {
+        let accountDiv;
+        if (this.props.loggedIn) {
+            accountDiv =
+                (<div id="Account">
+                    <span className="navTab" onClick={() => this.props.doLogout()}>Logout</span>
+                </div>);
+        }
         return (
             <div id="navBar">
                 <div id="AlchemyLogo" >
@@ -11,6 +18,8 @@ class NavPane extends Component {
                 <span className="navTab" >Events</span>
                 <span className="navTab" >Calendar</span>
                 <span className="navTab" >Messages</span>
+                {accountDiv}
+
             </div>
         );
     }

@@ -24,7 +24,8 @@ class App extends Component {
     return fetch("/api/hayden", postReq).then((response) => {
       return response.json();
     }).then((jsonData) => {
-      const responseObject = JSON.parse(jsonData);
+      //const responseObject = JSON.parse(jsonData);
+      const responseObject = jsonData;
       this.setState({
         loading: this.state.loading,
         loggedIn: responseObject.loggedIn
@@ -32,11 +33,20 @@ class App extends Component {
     });
   }
 
+  doLogout() {
+    console.warn("So you wanna logout eh?")
+    this.setState({
+      loading: this.state.loading,
+      loggedIn: false
+    });
+    console.warn(this.state);
+  }
+
   render() {
-    let mainElement = this.state.loggedIn ? <Login doPost={this.doPost.bind(this)}/> : <EventPage/>;
+    let mainElement = this.state.loggedIn ? <EventPage/> : <Login doPost={this.doPost.bind(this)}/>;
     return (
       <div className="page">
-          <NavPane/>
+          <NavPane doLogout={this.doLogout.bind(this)} loggedIn={this.state.loggedIn}/>
           {mainElement}
       </div>
     );
